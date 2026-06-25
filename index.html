@@ -102,6 +102,12 @@
   .sec--a{background:#1F1610}
   .sec--b{background:linear-gradient(180deg,#271C12,#1B130C)}
   .sec--gold{background:linear-gradient(160deg,#3A2A18,#5A3F1C 55%,#7A5520)}
+  /* seção preta com brilho radial suave vindo de cima */
+  .sec--black{background:#0C0805}
+  .sec--black::before{
+    content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(115% 70% at 50% -6%,rgba(238,214,158,.15),rgba(238,214,158,.05) 36%,transparent 62%);
+  }
   .sec-head{max-width:760px}
   .sec-head.center{margin:0 auto;text-align:center}
   .sec-head .kicker{margin-bottom:20px}
@@ -350,7 +356,7 @@
 </div>
 
 <!-- ===== Valor / Problema ===== -->
-<section class="sec sec--a" id="valor">
+<section class="sec sec--black" id="valor">
   <div class="wrap reveal">
     <div class="sec-head center">
       <span class="kicker">O detalhe que faz diferença</span>
@@ -450,7 +456,7 @@
 </section>
 
 <!-- ===== Para quem é ===== -->
-<section class="sec sec--a" id="publico">
+<section class="sec sec--black" id="publico">
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="kicker">Para quem é</span>
@@ -529,7 +535,7 @@
 </section>
 
 <!-- ===== Ainda escolhendo ===== -->
-<section class="sec sec--a">
+<section class="sec sec--black">
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="kicker">Ainda em planejamento?</span>
