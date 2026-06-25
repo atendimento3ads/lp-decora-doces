@@ -137,6 +137,9 @@
   .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--gold-light)}
   .hero h1{margin-bottom:24px}
   .hero .sub{font-family:var(--font-body);font-style:normal;font-weight:400;font-size:clamp(1.1rem,2vw,1.4rem);color:var(--gold-light);margin-bottom:20px;max-width:600px}
+  .hero-bullets{list-style:none;display:flex;flex-wrap:wrap;gap:10px 24px;margin:22px 0 0}
+  .hero-bullets li{display:inline-flex;align-items:center;gap:9px;color:var(--t-light);font-size:.98rem;font-weight:400}
+  .hero-bullets li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold-light);flex:none}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
 
   /* faixa de prova */
@@ -330,9 +333,15 @@
     <div class="hero-inner reveal">
       <span class="hero-badge"><span class="dot"></span>Forminhas de luxo • Decora Doces</span>
       <!-- COPY -->
-      <h1>Forminhas de luxo para doces que combinam com a decoração da sua festa</h1>
+      <h1>Forminhas de luxo para eventos que merecem uma apresentação impecável</h1>
       <!-- COPY -->
-      <p class="sub">Escolha modelos por cor, estilo e tipo de evento para deixar sua mesa de doces mais bonita, delicada e bem finalizada.</p>
+      <p class="sub">Modelos delicados para quem vende, fornece ou compõe mesas de doces com mais acabamento, beleza e sofisticação.</p>
+      <!-- COPY -->
+      <ul class="hero-bullets">
+        <li>doces</li>
+        <li>embalagens</li>
+        <li>linhas especiais</li>
+      </ul>
       <div class="hero-cta">
         <!-- COPY -->
         <a class="btn btn-primary" href="https://wa.me/556234322222" target="_blank" rel="noopener">
@@ -597,9 +606,9 @@
     <div class="sec-head center">
       <span class="kicker">Decora Doces</span>
       <!-- COPY -->
-      <h2>Deixe sua mesa de doces mais bonita nos detalhes</h2>
+      <h2>Valorize doces, encomendas e produções de festa nos detalhes</h2>
       <!-- COPY -->
-      <span class="lead">Solicite um orçamento e escolha forminhas de luxo para valorizar a apresentação da sua festa.</span>
+      <span class="lead">Solicite um orçamento e escolha forminhas de luxo para revenda, fornecimento, encomendas ou composição de mesas de evento.</span>
     </div>
     <div class="final-cta">
       <!-- COPY -->
