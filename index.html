@@ -273,7 +273,11 @@
     .urgency{display:none}
     .nav{justify-content:space-between}
     .brand .logo-light{height:36px}
-    .hero{background-image:url('assets/hero-mobile.png')}
+    .hero{min-height:88vh;align-items:flex-start;background-image:url('assets/hero-mobile.png');background-position:center bottom}
+    .hero::before{background:linear-gradient(180deg,rgba(18,12,6,.94) 0%,rgba(18,12,6,.74) 30%,rgba(18,12,6,.22) 56%,rgba(18,12,6,.5) 100%)}
+    .hero .wrap{padding-left:22px;padding-right:22px}
+    .hero-inner{max-width:100%;padding:34px 0 0}
+    .event{flex:0 1 calc(50% - 9px);min-width:0}
     .car-slide{width:230px}
     .car-arrow{width:46px;height:46px}
     .hero-cta{flex-direction:column;align-items:stretch}
