@@ -141,6 +141,7 @@
   .hero-bullets li{display:inline-flex;align-items:center;gap:10px;color:var(--t-light);font-size:.98rem;font-weight:400}
   .hero-bullets li svg{width:19px;height:19px;color:var(--gold-light);flex:none}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .hero-photo{display:none}
 
   /* faixa de prova */
   .trust{position:relative;z-index:50;background:rgba(20,13,6,.78);backdrop-filter:blur(10px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:-1px}
@@ -273,10 +274,11 @@
     .urgency{display:none}
     .nav{justify-content:space-between}
     .brand .logo-light{height:36px}
-    .hero{min-height:88vh;align-items:flex-start;background-image:url('assets/hero-mobile.png');background-position:center bottom}
-    .hero::before{background:linear-gradient(180deg,rgba(18,12,6,.94) 0%,rgba(18,12,6,.74) 30%,rgba(18,12,6,.22) 56%,rgba(18,12,6,.5) 100%)}
-    .hero .wrap{padding-left:22px;padding-right:22px}
-    .hero-inner{max-width:100%;padding:34px 0 0}
+    .hero{background-image:none;background:var(--ink);min-height:auto;display:block;padding:0}
+    .hero::before{display:none}
+    .hero .wrap{padding:44px 22px 20px}
+    .hero-inner{max-width:100%;padding:0}
+    .hero-photo{display:block;width:100%;height:50vh;object-fit:cover;object-position:center 46%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 15%);mask-image:linear-gradient(180deg,transparent,#000 15%)}
     .event{flex:0 1 calc(50% - 9px);min-width:0}
     .car-slide{width:230px}
     .car-arrow{width:46px;height:46px}
@@ -356,6 +358,8 @@
       </div>
     </div>
   </div>
+  <!-- imagem só no mobile (no desktop o hero usa background-image) -->
+  <img class="hero-photo" src="assets/hero-mobile-v2.png" alt="Mesa de doces da Decora Doces">
 </section>
 
 <!-- ===== Faixa de prova ===== -->
