@@ -6,7 +6,8 @@
 <title>Decora Doces — Forminhas de luxo para doces</title>
 <meta name="description" content="Forminhas de luxo para festas e doces. Modelos para lojistas, doceiras, confeiteiras e decoradores que buscam mais acabamento e sofisticação nas mesas de evento.">
 <meta name="theme-color" content="#1A120A">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+<link rel="icon" href="assets/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="assets/logo.png" sizes="192x192">
 <link rel="apple-touch-icon" href="assets/logo.png">
 <link rel="preload" as="image" href="assets/hero-desktop.webp" media="(min-width:641px)" fetchpriority="high">
@@ -300,6 +301,9 @@
   footer .fnum{color:var(--t-mute);font-size:1rem;margin-bottom:6px;display:inline-flex;gap:9px;align-items:center}
   footer .fnum svg{width:18px;height:18px;color:var(--gold-light)}
   footer .cr{color:rgba(243,233,219,.45);font-size:.85rem;margin-top:18px}
+  footer .cr:last-of-type{margin-top:6px}
+  .dev-credit{color:var(--gold-light);text-decoration:none;font-weight:500;transition:opacity .2s ease}
+  .dev-credit:hover{opacity:.75;text-decoration:underline}
 
   /* animação de entrada */
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
@@ -709,6 +713,7 @@
       WhatsApp: (62) 3432-2222
     </div>
     <p class="cr">© 2026 Decora Doces — Forminhas de luxo para doces. Todos os direitos reservados.</p>
+    <p class="cr">Desenvolvido por <a class="dev-credit" href="https://3ads.com.br/" target="_blank" rel="noopener">3ADS</a></p>
   </div>
 </footer>
 
