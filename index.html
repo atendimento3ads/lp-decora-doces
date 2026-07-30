@@ -104,7 +104,7 @@
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
   img{max-width:100%;display:block}
   picture{display:block}
 
@@ -170,14 +170,14 @@
   }
   .nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:22px;position:relative}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-  .brand .logo-light{height:42px;width:auto;display:block}
+  .brand .logo-light{height:36px;width:auto;display:block}
   .brand .mark{width:38px;height:38px;flex:none}
-  .brand .name{font-family:var(--font-display);font-weight:600;font-size:1.4rem;color:var(--gold-light);line-height:1;white-space:nowrap}
+  .brand .name{font-family:var(--font-display);font-weight:600;font-size:1.25rem;color:var(--gold-light);line-height:1;white-space:nowrap}
   .nav .btn{padding:12px 26px;font-size:.92rem;flex:none}
 
   /* ---------- Seção full-bleed com imagem de fundo ---------- */
   .sec{
-    position:relative;padding:120px 0;
+    position:relative;padding:88px 0;
     background:var(--ink-2);
     color:var(--t-light);
   }
@@ -198,24 +198,19 @@
   .sec-head h2{margin-bottom:18px}
   .sec-head .lead{margin-bottom:18px;display:block}
 
-  /* ---------- Hero ---------- */
+  /* ---------- Hero (mobile-first: fundo sólido, foto abaixo; enriquecido a partir de 641px) ---------- */
   .hero{
-    position:relative;min-height:92vh;display:flex;align-items:center;
-    background-color:var(--ink);
-    background-image:url('assets/hero-desktop.webp');
-    background-size:cover;background-position:center;background-repeat:no-repeat;
+    position:relative;min-height:auto;display:block;padding:0;
+    background:var(--ink);
     color:#fff;overflow:hidden;
   }
-  .hero::before{
-    content:"";position:absolute;inset:0;z-index:1;
-    background:linear-gradient(90deg,rgba(18,12,6,.82) 0%,rgba(18,12,6,.5) 38%,rgba(18,12,6,.12) 66%,rgba(18,12,6,0) 100%);
-  }
+  .hero::before{content:none}
   .hero .wrap{
     position:relative;z-index:2;max-width:none;width:100%;margin:0;
-    padding-left:clamp(28px,7vw,130px);padding-right:32px;
+    padding:44px 22px 20px;
     display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap;
   }
-  .hero-inner{flex:1 1 480px;max-width:600px;padding:60px 0}
+  .hero-inner{flex:1 1 480px;max-width:100%;padding:0}
 
   /* ---------- Formulário de orçamento (Hero) ---------- */
   .hero-form{
@@ -228,6 +223,8 @@
   .hero-form-sub{color:var(--t-mute);font-size:.9rem;font-weight:300;margin-bottom:22px}
   .hero-form .field{display:block;margin-bottom:14px}
   .hero-form .field span{display:block;font-size:.82rem;color:var(--gold-light);margin-bottom:6px;font-weight:500}
+  .hero-form .field span em{color:var(--gold-light);font-style:normal}
+  .hero-form .field input:invalid:not(:placeholder-shown){border-color:#d98c6b}
   .hero-form .field input{
     width:100%;padding:13px 16px;border-radius:12px;
     background:rgba(255,255,255,.06);border:1px solid var(--line-strong);
@@ -249,8 +246,9 @@
   .hero-bullets{list-style:none;display:flex;flex-wrap:wrap;gap:10px 24px;margin:22px 0 0}
   .hero-bullets li{display:inline-flex;align-items:center;gap:10px;color:var(--t-light);font-size:.98rem;font-weight:400}
   .hero-bullets li svg{width:19px;height:19px;color:var(--gold-light);flex:none}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-  .hero-photo{display:none}
+  .hero-cta{display:flex;flex-direction:column;align-items:stretch;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .hero-cta .btn{justify-content:center}
+  .hero-photo{display:block;width:100%;height:50vh;object-fit:cover;object-position:center 46%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 15%);mask-image:linear-gradient(180deg,transparent,#000 15%)}
 
   /* faixa de prova */
   .trust{position:relative;z-index:50;background:rgba(20,13,6,.78);backdrop-filter:blur(10px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:-1px}
@@ -275,13 +273,13 @@
   }
   .chip .ck{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold-deep));flex:none}
 
-  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+  .two-col{display:grid;grid-template-columns:1fr;gap:36px;align-items:center}
   .field-label{font-weight:400;color:var(--t-light);margin-bottom:14px}
 
   /* grid de eventos */
   .events-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:48px}
   .event{
-    flex:0 1 calc(25% - 14px);min-width:200px;border-radius:var(--radius);
+    flex:0 1 calc(50% - 9px);min-width:0;border-radius:var(--radius);
     padding:28px 20px;text-align:center;
     background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(10px);
   }
@@ -295,7 +293,7 @@
   .event h3{font-family:var(--font-body);font-weight:500;font-size:1.02rem;color:#fff}
 
   /* cards de público */
-  .persona-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:48px}
+  .persona-grid{display:grid;grid-template-columns:1fr;gap:22px;margin-top:48px}
   .persona{border-radius:var(--radius);padding:34px 32px;position:relative;overflow:hidden;
     background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(10px)}
   .persona::after{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold-light),var(--gold),var(--gold-deep))}
@@ -309,7 +307,7 @@
   .persona p{color:var(--t-mute);font-size:1rem;font-weight:300}
 
   /* processo numerado */
-  .process{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+  .process{display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
   .steps{display:flex;flex-direction:column;gap:6px}
   .step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
   .step:last-child{border-bottom:none}
@@ -317,7 +315,7 @@
   .step .st-txt{color:var(--t-light);font-size:1.05rem;padding-top:6px;text-transform:capitalize}
 
   /* diferenciais */
-  .diff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:48px}
+  .diff-grid{display:grid;grid-template-columns:1fr;gap:22px;margin-top:48px}
   .diff{border-radius:var(--radius);padding:32px;display:flex;gap:18px;
     background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(10px)}
   .diff .di{
@@ -331,7 +329,8 @@
   .diff p{color:var(--t-mute);font-size:.98rem;font-weight:300}
 
   /* ---------- CTA final ---------- */
-  .final-cta{margin-top:34px;display:flex;align-items:center;gap:26px;flex-wrap:wrap;justify-content:center}
+  .final-cta{margin-top:34px;display:flex;flex-direction:column;align-items:stretch;gap:26px;flex-wrap:wrap;justify-content:center}
+  .final-cta .btn{justify-content:center;text-align:center}
 
   /* ---------- Carrossel ---------- */
   .carousel{position:relative;margin-top:48px}
@@ -340,7 +339,7 @@
   @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   .carousel:hover .car-track{animation-play-state:paused}
   .car-slide{
-    flex:0 0 auto;width:300px;aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;
+    flex:0 0 auto;width:230px;aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;
     background:linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
     border:1px solid var(--line);position:relative;
     display:flex;align-items:center;justify-content:center;
@@ -350,7 +349,7 @@
   .car-slide .lbl{position:absolute;bottom:16px;font-family:var(--font-body);font-style:normal;color:var(--gold-light);opacity:.85;font-size:.92rem}
   .car-arrow{
     position:absolute;top:50%;transform:translateY(-50%);z-index:3;
-    width:54px;height:54px;border-radius:50%;border:1px solid var(--line-strong);
+    width:46px;height:46px;border-radius:50%;border:1px solid var(--line-strong);
     background:rgba(20,13,6,.6);color:var(--gold-light);cursor:pointer;backdrop-filter:blur(6px);
     display:flex;align-items:center;justify-content:center;
     transition:transform .2s ease,background .2s ease;
@@ -376,7 +375,36 @@
   .reveal-pop{opacity:0;transform:translateY(18px) scale(.97);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
   .reveal-pop.in{opacity:1;transform:none}
 
-  /* ---------- Responsivo ---------- */
+  /* ---------- Responsivo (mobile-first: as regras acima são a base mobile; aqui só enriquecemos) ---------- */
+
+  /* a partir de tablets (641px+) */
+  @media(min-width:641px){
+    .wrap{padding:0 32px}
+    .brand .logo-light{height:42px}
+    .brand .name{font-size:1.4rem}
+    .hero{min-height:auto;display:flex;align-items:center;padding:60px 0;background-color:var(--ink);background-image:url('assets/hero-desktop.webp');background-size:cover;background-position:center;background-repeat:no-repeat}
+    .hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(18,12,6,.82) 0%,rgba(18,12,6,.5) 38%,rgba(18,12,6,.12) 66%,rgba(18,12,6,0) 100%)}
+    .hero .wrap{padding:0 32px 0 clamp(28px,7vw,130px)}
+    .hero-inner{max-width:600px;padding:60px 0}
+    .hero-cta{flex-direction:row;align-items:center}
+    .hero-photo{display:none}
+    .event{min-width:200px}
+    .persona-grid,.diff-grid{grid-template-columns:repeat(2,1fr)}
+    .final-cta{flex-direction:row;align-items:center}
+    .car-slide{width:300px}
+    .car-arrow{width:54px;height:54px}
+    /* imagem antes do conteúdo é só no mobile — a partir daqui volta à ordem normal */
+    .mobile-img-first > *:last-child{order:0;margin-bottom:0}
+  }
+
+  /* telas de desktop (981px+) */
+  @media(min-width:981px){
+    .two-col{grid-template-columns:1fr 1fr;gap:54px}
+    .process{grid-template-columns:.9fr 1.1fr;gap:56px}
+    .event{flex:0 1 calc(25% - 14px)}
+    .sec{padding:120px 0}
+    .hero{min-height:92vh;padding:0}
+  }
 
   /* Telas muito grandes: TVs, monitores widescreen/ultrawide */
   @media(min-width:1600px){
@@ -387,33 +415,6 @@
     :root{--maxw:1480px}
   }
 
-  @media(max-width:980px){
-    .two-col,.process{grid-template-columns:1fr;gap:36px}
-    .event{flex:0 1 calc(50% - 9px)}
-    .sec{padding:88px 0}
-    .hero{min-height:auto;padding:60px 0}
-  }
-  @media(max-width:640px){
-    .wrap{padding:0 20px}
-    .nav{justify-content:space-between}
-    .brand .logo-light{height:36px}
-    .hero{background-image:none;background:var(--ink);min-height:auto;display:block;padding:0}
-    .hero::before{display:none}
-    .hero .wrap{padding:44px 22px 20px}
-    .hero-inner{max-width:100%;padding:0}
-    .hero-photo{display:block;width:100%;height:50vh;object-fit:cover;object-position:center 46%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 15%);mask-image:linear-gradient(180deg,transparent,#000 15%)}
-    .event{flex:0 1 calc(50% - 9px);min-width:0}
-    .car-slide{width:230px}
-    .car-arrow{width:46px;height:46px}
-    .hero-cta{flex-direction:column;align-items:stretch}
-    .hero-cta .btn{justify-content:center}
-    .persona-grid,.diff-grid{grid-template-columns:1fr}
-    .final-cta{flex-direction:column;align-items:stretch}
-    .final-cta .btn{justify-content:center;text-align:center}
-    .brand .name{font-size:1.25rem}
-    /* imagem antes do conteúdo na seção "Sem decidir sozinha" */
-    .mobile-img-first > *:last-child{order:-1;margin-bottom:8px}
-  }
   @media(max-width:640px) and (max-height:480px){
     .hero-photo{height:auto;aspect-ratio:16/9}
   }
@@ -494,16 +495,16 @@
       <p class="hero-form-sub">Atendimento exclusivo para empresas com CNPJ. Preencha os dados e continue pelo WhatsApp.</p>
       <form id="formOrcamento">
         <label class="field">
-          <span>Nome</span>
-          <input type="text" name="nome" required autocomplete="name" placeholder="Seu nome">
+          <span>Nome <em>*</em></span>
+          <input type="text" name="nome" required minlength="2" autocomplete="name" placeholder="Seu nome">
         </label>
         <label class="field">
-          <span>Nome da empresa</span>
-          <input type="text" name="empresa" required autocomplete="organization" placeholder="Nome da sua empresa">
+          <span>Nome da empresa <em>*</em></span>
+          <input type="text" name="empresa" required minlength="2" autocomplete="organization" placeholder="Nome da sua empresa">
         </label>
         <label class="field">
-          <span>CNPJ</span>
-          <input type="text" name="cnpj" required inputmode="numeric" maxlength="18" placeholder="00.000.000/0000-00">
+          <span>CNPJ <em>*</em></span>
+          <input type="text" name="cnpj" required inputmode="numeric" maxlength="18" pattern="\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}" title="Informe o CNPJ completo no formato 00.000.000/0000-00" placeholder="00.000.000/0000-00">
         </label>
         <button type="submit" class="btn btn-primary hero-form-submit">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.7-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.2-.5s0-.4-.1-.5l-.8-1.8c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1z"/></svg>
